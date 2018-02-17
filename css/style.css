@@ -1,0 +1,133 @@
+.header {
+    background: #ff9000;
+    padding: 20px;
+    margin: 0px;
+}
+
+.header-title {
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.header-search {
+    background: white;
+    color: black;
+}
+
+.header-button {
+    padding: 0px;
+}
+
+.header-button input {
+    margin-left: -10px;
+    height: 65px;
+}
+
+.header-cart {
+    text-align: center;
+}
+
+.header-cart-icon {
+    font-size: 60px;
+    color: white;
+}
+
+.header-cart-link {
+    color: white;
+    font-size: 20px;
+}
+
+.section {
+    padding: 20px;
+    padding-right: 80px;
+    padding-left: 80px;
+    background: #f2f2f2;
+    margin: 0px;
+}
+
+.keunggulan {
+    background: white;
+    padding: 10px;
+}
+
+.keunggulan-icon {
+    font-size: 80px;
+    color: orange;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.promo {
+    background: white;
+    border-bottom: 2px solid #ed2399;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 5px;
+}
+
+.promo-title {
+    font-weight: bold;
+    border-bottom: 1px solid #ed2399;
+}
+
+.promo-product-photo {
+    width: 100%;
+}
+
+.promo-product-title {
+    font-size: 14px;
+}
+
+.diskon {
+    background: white;
+    padding: 10px;
+    margin: 5px;
+    border-bottom: 2px solid orange;
+}
+
+.diskon-title {
+    font-weight: bold;
+    border-bottom: 1px solid orange;
+}
+
+.diskon-product-photo {
+    width: 60%;
+}
+
+.diskon-product-title {
+    font-size: 14px;
+}
+
+.allproduk {
+    background: white;
+    padding: 10px;
+    margin: 5px;
+    border-bottom: 2px solid #2241ed;
+}
+
+.allproduk-title {
+    font-weight: bold;
+    border-bottom: 1px solid #2241ed;
+}
+
+.allproduk-item {
+    text-align: center;
+    height: 300px;
+}
+
+.allproduk-item-photo {
+    width: 60%;
+}
+
+.allproduk-item-title,
+.allproduk-item-price {
+    font-size: 14px;
+}
+
+.allproduk-item-btn {
+    font-size: 12px;
+}
