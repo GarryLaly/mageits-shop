@@ -76,54 +76,23 @@
         <!-- all produk -->
         <div class="row col l12 allproduk">
             <p class="allproduk-title">All Produk</p>
-            <div class="col l3 allproduk-item">
-                <img src="../img/1.png" class="allproduk-item-photo">
-                <p class="allproduk-item-title"><b>Laptop</b></p>
-                <p class="allproduk-item-price"><b>Harga : Rp 5000000</b></p>
-                <a class="btn allproduk-item-btn" href="detail.php">Lihat Detail</a>
-            </div>
-            <div class="col l3 allproduk-item">
-                <img src="../img/1.png" class="allproduk-item-photo">
-                <p class="allproduk-item-title"><b>Laptop</b></p>
-                <p class="allproduk-item-price"><b>Harga : Rp 5000000</b></p>
-                <a class="btn allproduk-item-btn" href="detail.php">Lihat Detail</a>
-            </div>
-            <div class="col l3 allproduk-item">
-                <img src="../img/1.png" class="allproduk-item-photo">
-                <p class="allproduk-item-title"><b>Laptop</b></p>
-                <p class="allproduk-item-price"><b>Harga : Rp 5000000</b></p>
-                <a class="btn allproduk-item-btn" href="detail.php">Lihat Detail</a>
-            </div>
-            <div class="col l3 allproduk-item">
-                <img src="../img/1.png" class="allproduk-item-photo">
-                <p class="allproduk-item-title"><b>Laptop</b></p>
-                <p class="allproduk-item-price"><b>Harga : Rp 5000000</b></p>
-                <a class="btn allproduk-item-btn" href="detail.php">Lihat Detail</a>
-            </div>
-            <div class="col l3 allproduk-item">
-                <img src="../img/1.png" class="allproduk-item-photo">
-                <p class="allproduk-item-title"><b>Laptop</b></p>
-                <p class="allproduk-item-price"><b>Harga : Rp 5000000</b></p>
-                <a class="btn allproduk-item-btn" href="detail.php">Lihat Detail</a>
-            </div>
-            <div class="col l3 allproduk-item">
-                <img src="../img/1.png" class="allproduk-item-photo">
-                <p class="allproduk-item-title"><b>Laptop</b></p>
-                <p class="allproduk-item-price"><b>Harga : Rp 5000000</b></p>
-                <a class="btn allproduk-item-btn" href="detail.php">Lihat Detail</a>
-            </div>
-            <div class="col l3 allproduk-item">
-                <img src="../img/1.png" class="allproduk-item-photo">
-                <p class="allproduk-item-title"><b>Laptop</b></p>
-                <p class="allproduk-item-price"><b>Harga : Rp 5000000</b></p>
-                <a class="btn allproduk-item-btn" href="detail.php">Lihat Detail</a>
-            </div>
-            <div class="col l3 allproduk-item">
-                <img src="../img/1.png" class="allproduk-item-photo">
-                <p class="allproduk-item-title"><b>Laptop</b></p>
-                <p class="allproduk-item-price"><b>Harga : Rp 5000000</b></p>
-                <a class="btn allproduk-item-btn" href="detail.php">Lihat Detail</a>
-            </div>
+
+            <?php
+            include "koneksi.php";
+
+            $sql = "SELECT id, nama, harga FROM barang WHERE jumlahbarang > 0";
+            $query = mysqli_query($koneksi, $sql);
+            while($get_row = mysqli_fetch_assoc($query)) {
+                ?>
+                <div class="col l3 allproduk-item">
+                    <img src="../img/<?php echo $get_row['id']; ?>" class="allproduk-item-photo">
+                    <p class="allproduk-item-title"><b><?php echo $get_row['nama']; ?></b></p>
+                    <p class="allproduk-item-price"><b>Harga : Rp <?php echo $get_row['harga']; ?></b></p>
+                    <a class="btn allproduk-item-btn" href="detail.php?id=<?php echo $get_row['id']; ?>">Lihat Detail</a>
+                </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
 
