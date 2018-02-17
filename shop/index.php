@@ -25,7 +25,7 @@
         <div class="col l2 header-cart">
             <i class="material-icons header-cart-icon">local_mall</i>
             <div class="col l12">
-                <a class="header-cart-link" href="keranjang.php">My Keranjang</a>
+                <a class="header-cart-link" href="cart.php">My Keranjang</a>
             </div>
         </div>
     </div>
@@ -85,7 +85,7 @@
             while($get_row = mysqli_fetch_assoc($query)) {
                 ?>
                 <div class="col l3 allproduk-item">
-                    <img src="../img/<?php echo $get_row['id']; ?>" class="allproduk-item-photo">
+                    <img src="../img/<?php echo $get_row['id']; ?>.png" class="allproduk-item-photo">
                     <p class="allproduk-item-title"><b><?php echo $get_row['nama']; ?></b></p>
                     <p class="allproduk-item-price"><b>Harga : Rp <?php echo $get_row['harga']; ?></b></p>
                     <a class="btn allproduk-item-btn" href="detail.php?id=<?php echo $get_row['id']; ?>">Lihat Detail</a>

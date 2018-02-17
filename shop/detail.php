@@ -25,25 +25,39 @@
         <div class="col l2 header-cart">
             <i class="material-icons header-cart-icon">local_mall</i>
             <div class="col l12">
-                <a class="header-cart-link" href="keranjang.php">My Keranjang</a>
+                <a class="header-cart-link" href="cart.php">My Keranjang</a>
             </div>
         </div>
     </div>
 
     <div class="row section">
         <div class="row col l12 produk-detail">
-            <div class="col l4 produk-detail-content">
-                <img src="../img/1.png">
-                <p><b>Laptop</b></p>
-                <p class="text-left"><b>Deskripsi:</b></p>
-                <p class="text-left">Laptop terbaru Murah Meriah</p>
-            </div>
-            <div class="col l8 produk-detail-paragraph">
-                <p><b>Stok barang : 20 pcs</b></p>
-                <p><b>Harga : Rp 5000000</b></p>
-                <p><a href="#" class="btn">Tambah ke keranjang</a></p>
-                <a href="index.php" class="btn">Belanja lagi</a>
-            </div>
+            <?php
+            include "koneksi.php";
+            $productID = $_GET['id'];
+
+            if (isset($productID)) {
+                $sql = "SELECT id, nama, harga, deskripsi, jumlahbarang FROM barang WHERE jumlahbarang > 0 AND id='".$productID."'";
+                $query = mysqli_query($koneksi, $sql);
+                while($get_row = mysqli_fetch_assoc($query)) {
+                    ?>
+                    <div class="col l4 produk-detail-content">
+                        <img src="../img/<?php echo $get_row['id']; ?>.png">
+                        <p><b><?php echo $get_row['nama']; ?></b></p>
+                        <p class="text-left"><b>Deskripsi:</b></p>
+                        <p class="text-left"><?php echo $get_row['deskripsi']; ?></p>
+                    </div>
+                    <div class="col l8 produk-detail-paragraph">
+                        <p><b>Stok barang : <?php echo $get_row['jumlahbarang']; ?> pcs</b></p>
+                        <p><b>Harga : Rp <?php echo $get_row['harga']; ?></b></p>
+                        <p><b>Pembelian</b></p>
+                        <p><a href="cart.php?add=<?php echo $get_row['id']; ?>" class="btn">Tambah ke cart</a></p>
+                        <a href="index.php" class="btn">Belanja lagi</a>
+                    </div>
+                    <?php
+                }
+            }
+            ?>
         </div>
     </div>
 
